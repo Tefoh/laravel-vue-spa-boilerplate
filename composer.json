@@ -30,6 +30,9 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
         }
     },
     "autoload": {
