@@ -9,4 +9,7 @@
 <p>for dashboard using [material dashboard](https://github.com/creativetimofficial/material-dashboard).</p>
 
 <br />
-install it like a normal laravel project then run `php artisan passport:install`
+to install it run this command
+`composer create-project --prefer-dist tefoh/laravel-vue-spa-boilerplate projectname`
+then run `php artisan passport:install`
+and enter key to .env file that login and register work
