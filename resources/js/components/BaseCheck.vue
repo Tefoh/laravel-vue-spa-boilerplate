@@ -9,6 +9,7 @@
                 :value="valueProp"
                 :class="{ 'is-invalid': $parent[this.form].errors.has(fieldName), classes }"
                 v-bind="$attrs"
+                :checked="value"
             >
             <span class="form-check-sign">
                 <span class="check"></span>
@@ -58,6 +59,11 @@
                 valueProp: !! this.value,
             }
         },
+        watch: {
+            value(newValue, oldValue) {
+                this.valueProp = newValue
+            }
+        },
         computed: {
             fieldName() {
                 return this.field ? this.field : this.name;
@@ -65,9 +71,7 @@
         },
         methods: {
             updateInput() {
-                let value = !! this.valueProp;
-                this.$emit('input', ! value);
-                this.valueProp = ! value;
+                this.$emit('input', ! this.valueProp);
             },
         }
     }
