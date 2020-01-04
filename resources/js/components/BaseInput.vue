@@ -4,7 +4,7 @@
         <input :id="name"
                :value="value"
                class="form-control"
-               :class="{ 'is-invalid': $parent[this.form].errors.has(fieldName), classes }"
+               :class="{ 'is-invalid': $parent[form].errors.has(fieldName), classes }"
                v-bind="$attrs"
                :type="inputType"
                @input="updateInput"
@@ -17,7 +17,7 @@
         >
             <i class="fa" :class="eyeClass"></i>
         </span>
-        <has-error :form="$parent[this.form]" :field="fieldName"></has-error>
+        <has-error :form="$parent[form]" :field="fieldName"></has-error>
     </div>
 </template>
 

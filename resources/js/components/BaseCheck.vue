@@ -7,7 +7,7 @@
                 :id="name"
                 @change="updateInput"
                 :value="valueProp"
-                :class="{ 'is-invalid': $parent[this.form].errors.has(fieldName), classes }"
+                :class="{ 'is-invalid': $parent[form].errors.has(fieldName), classes }"
                 v-bind="$attrs"
                 :checked="value"
             >
@@ -15,7 +15,7 @@
                 <span class="check"></span>
             </span>
         </label>
-        <has-error :form="$parent[this.form]" :field="fieldName"></has-error>
+        <has-error :form="$parent[form]" :field="fieldName"></has-error>
     </div>
 </template>
 
