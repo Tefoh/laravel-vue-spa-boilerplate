@@ -3,11 +3,11 @@
         <select class="custom-select my-1"
                 @change="updateInput"
                 :class="{ 'is-invalid': $parent[form].errors.has(field), classes }"
+				v-bind="$attrs"
         >
             <option value="" disabled selected v-if="label">{{ label }}</option>
             <option :value="Array.isArray(items) ? item : key"
                     v-for="(item, key) in items"
-                    v-bind="$attrs"
             >
                 {{ item }}
             </option>
