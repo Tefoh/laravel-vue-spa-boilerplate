@@ -2140,7 +2140,7 @@ __webpack_require__.r(__webpack_exports__);
       "default": ''
     },
     value: {
-      type: String,
+      type: [String, Number],
       "default": ''
     },
     type: {
@@ -47442,14 +47442,19 @@ var render = function() {
     [
       _c(
         "select",
-        {
-          staticClass: "custom-select my-1",
-          class: {
-            "is-invalid": _vm.$parent[_vm.form].errors.has(_vm.field),
-            classes: _vm.classes
+        _vm._b(
+          {
+            staticClass: "custom-select my-1",
+            class: {
+              "is-invalid": _vm.$parent[_vm.form].errors.has(_vm.field),
+              classes: _vm.classes
+            },
+            on: { change: _vm.updateInput }
           },
-          on: { change: _vm.updateInput }
-        },
+          "select",
+          _vm.$attrs,
+          false
+        ),
         [
           _vm.label
             ? _c(
@@ -47462,13 +47467,8 @@ var render = function() {
           _vm._l(_vm.items, function(item, key) {
             return _c(
               "option",
-              _vm._b(
-                { domProps: { value: Array.isArray(_vm.items) ? item : key } },
-                "option",
-                _vm.$attrs,
-                false
-              ),
-              [_vm._v("\n            " + _vm._s(item) + "\n        ")]
+              { domProps: { value: Array.isArray(_vm.items) ? item : key } },
+              [_vm._v("\n                " + _vm._s(item) + "\n            ")]
             )
           })
         ],
