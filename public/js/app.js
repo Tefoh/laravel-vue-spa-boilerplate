@@ -2224,6 +2224,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   inheritAttrs: false,
@@ -2248,10 +2249,19 @@ __webpack_require__.r(__webpack_exports__);
     field: {
       type: String,
       require: true
+    },
+    value: {
+      type: [String, Number],
+      "default": ''
     }
   },
   components: {
     HasError: vform__WEBPACK_IMPORTED_MODULE_0__["HasError"]
+  },
+  data: function data() {
+    return {
+      selected: this.value
+    };
   },
   methods: {
     updateInput: function updateInput(event) {
@@ -47467,8 +47477,15 @@ var render = function() {
           _vm._l(_vm.items, function(item, key) {
             return _c(
               "option",
-              { domProps: { value: Array.isArray(_vm.items) ? item : key } },
-              [_vm._v("\n                " + _vm._s(item) + "\n            ")]
+              {
+                domProps: {
+                  value: Array.isArray(_vm.items) ? item : key,
+                  selected: Array.isArray(_vm.items)
+                    ? _vm.selected === item
+                    : _vm.selected === key
+                }
+              },
+              [_vm._v("\n            " + _vm._s(item) + "\n        ")]
             )
           })
         ],
