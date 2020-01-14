@@ -2263,6 +2263,11 @@ __webpack_require__.r(__webpack_exports__);
       selected: this.value
     };
   },
+  watch: {
+    value: function value(newValue, oldValue) {
+      this.selected = newValue;
+    }
+  },
   methods: {
     updateInput: function updateInput(event) {
       this.$emit('input', event.target.value);
@@ -47467,11 +47472,9 @@ var render = function() {
         ),
         [
           _vm.label
-            ? _c(
-                "option",
-                { attrs: { value: "", disabled: "", selected: "" } },
-                [_vm._v(_vm._s(_vm.label))]
-              )
+            ? _c("option", { attrs: { value: "", disabled: "" } }, [
+                _vm._v(_vm._s(_vm.label))
+              ])
             : _vm._e(),
           _vm._v(" "),
           _vm._l(_vm.items, function(item, key) {

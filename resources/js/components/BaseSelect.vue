@@ -5,7 +5,7 @@
                 :class="{ 'is-invalid': $parent[form].errors.has(field), classes }"
                 v-bind="$attrs"
         >
-            <option value="" disabled selected v-if="label">{{ label }}</option>
+            <option value="" disabled v-if="label">{{ label }}</option>
             <option :value="Array.isArray(items) ? item : key"
                     v-for="(item, key) in items"
                     :selected="Array.isArray(items) ? selected === item : selected === key"
@@ -55,6 +55,11 @@
         data() {
             return {
                 selected: this.value
+            }
+        },
+        watch: {
+            value(newValue, oldValue) {
+                this.selected = newValue;
             }
         },
         methods: {
