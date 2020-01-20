@@ -47472,9 +47472,14 @@ var render = function() {
         ),
         [
           _vm.label
-            ? _c("option", { attrs: { value: "", disabled: "" } }, [
-                _vm._v(_vm._s(_vm.label))
-              ])
+            ? _c(
+                "option",
+                {
+                  attrs: { value: "", disabled: "" },
+                  domProps: { selected: _vm.selected === "" }
+                },
+                [_vm._v(_vm._s(_vm.label))]
+              )
             : _vm._e(),
           _vm._v(" "),
           _vm._l(_vm.items, function(item, key) {
