@@ -47476,7 +47476,7 @@ var render = function() {
                 "option",
                 {
                   attrs: { value: "", disabled: "" },
-                  domProps: { selected: _vm.selected === "" }
+                  domProps: { selected: !_vm.selected }
                 },
                 [_vm._v(_vm._s(_vm.label))]
               )
